@@ -13,7 +13,7 @@ all: $(PROGRAMS)
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDES)
                 
-hello: hello.o
+hello: hello.o response.o
 	$(CC) $(CFLAGS) -o $@ $^ -lfcgi $(LDFLAGS)
 
 clean:
