@@ -80,7 +80,7 @@ void cw_res_print_headers(cw_response *res, FCGX_Stream *out)
             if (name) {
                 char * value = res->cookies[i*2+1];
                 if (i>0) {
-                    FCGX_FPrintF(out, ";", name, value);
+                    FCGX_FPrintF(out, ",", name, value);
                 }
                 FCGX_FPrintF(out, "%s=%s", name, value);
             }
