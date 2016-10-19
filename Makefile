@@ -1,4 +1,4 @@
-CFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -g -I. -Wall -Werror -Wextra
 PROGRAMS = hello
 
 ifeq "$(CC)" "clang"
@@ -13,7 +13,7 @@ all: $(PROGRAMS)
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDES)
                 
-hello: hello.o response.o session.o
+hello: hello.o response.o session.o quicklist/quicklist.o
 	$(CC) $(CFLAGS) -o $@ $^ -lfcgi $(LDFLAGS)
 
 clean:

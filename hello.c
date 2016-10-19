@@ -14,8 +14,8 @@ static int http_response(FCGX_Stream *out, int http_code, const char *message,
     cw_res_set_status(&resp, http_code, message);
     cw_res_set_cookie(&resp, "foo", "bar");
     cw_res_set_cookie(&resp, "barf", "food");
+    cw_res_set_header(&resp, "Content-Type", "text/plain");
     cw_res_print_headers(&resp, out);
-    cw_res_set_header(&resp, "Content-Type", "test/plain");
     FCGX_FPrintF(out,
                  "Content-Length: %u\r\n"
                  "\r\n", (unsigned int)length);

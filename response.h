@@ -1,10 +1,10 @@
 #pragma once
 
-#define MAXHEADERS 8
 #define MAXCOOKIES 8
 
+struct quicklist;
 typedef struct cw_response {
-    char *headers[MAXHEADERS*2];
+    struct quicklist * headers;
     char *cookies[MAXCOOKIES*2];
     int http_code;
     char *status;

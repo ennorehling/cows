@@ -1,0 +1,3 @@
+[submodule "quicklist"]
+	path = quicklist
+	url = https://github.com/ennorehling/quicklist.git
