@@ -1,0 +1,12 @@
+sudo: false
+language: c
+compiler:
+  - gcc
+  - clang
+script: s/build
+addons:
+  apt:
+    packages:
+      - libfcgi-dev
+os:
+  - linux
